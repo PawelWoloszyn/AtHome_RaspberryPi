@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sterowanie grzałką</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+  <link rel="icon" type="image/png" sizes="144x144" href="/favicon-144x144.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#00878f">
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'>
+  <script type="text/javascript" src="jQuery v3.5.1.js"></script>
+  <script type="text/javascript" src="relays.js"></script>
+  <link rel="stylesheet" href="relays.css">
+</head>
+
+<body>
+  <center>
+    <div>
+      <form>
+        <h1>Sterowanie grzałką</h1>
+        <div>
+          <p class="opis" id="todaysWorkingTime">Dzisiejszy czas grzania:</p>
+        </div>
+        <div>
+          <img id="inverterImage" src="http://192.168.1.152/gen.screenshot.bmp?" name="screenshotImage" alt="Screenshot of Display" width="256" height="128">
+        </div>
+        <div>
+          <p class="opis">Start</p>
+          <input id="startDate" type="date">
+          <input id="startTime" type="time" name="appt-time" value="12:00">
+        </div>
+        <div>
+          <p class="opis"> Stop</p>
+          <input id="stopDate" type="date" value="2014-02-09">
+          <input id="stopTime" type="time" name="appt-time" value="12:00">
+        </div>
+        <div style="margin-top:1em;">
+          <label class="opis" style="display: inline;">Wymagany poziom produkcji:</label>
+          <input id="powerCheckbox" type="checkbox">
+        </div>
+        <div id="powerDiv" style="margin-top:1em; display:none;">
+          <input type="number" id="powerValue">
+          <label class="opis" style="display: inline; ">wat</label>
+        </div>
+        <div style="margin-top:1em;">
+          <input type="button" id="sendData" value="wyślij">
+        </div>
+        <div style="margin-top:1em;">
+          <input type="button" id="deleteAll" value="kasuj wszystkie" />
+        </div>
+        <div style="margin-top:1em;">
+          <table id="excelDataTable" border="1">
+          </table>
+        </div>
+      </form>
+    </div>
+  </center>
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 22pt;
+      margin: 0;
+      margin-top: 6px;
+    }
+
+    h1 {
+      font-size: 1em;
+      font-weight: normal;
+      margin: 0px 0px 6px 0px;
+    }
+
+    button {
+      font-size: 14pt;
+      width: 2em;
+    }
+
+    inverter center {
+      padding: 1em;
+      margin: auto;
+      width: 90%;
+      box-shadow: #777 2px 2px 5px;
+      box-sizing: border-box;
+    }
+
+    #loading {
+      margin-bottom: 12px;
+    }
+
+    @media only screen and (max-device-width: 700px) {
+      center {
+        width: 100%;
+        height: 100vh;
+        overflow: auto;
+      }
+    }
+  </style>
+</body>
+
+</html>

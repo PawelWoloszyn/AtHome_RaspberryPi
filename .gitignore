@@ -1,0 +1,15 @@
+#.gitignore
+#directories
+scripts/prod/logs/*
+scripts/prod/__pycache__/*
+supervisor
+
+#python specifis
+CREDENTIALS.py
+
+#WebServer
+config.php
+*.html.save
+
+#sql
+mysqlbackup.sql
